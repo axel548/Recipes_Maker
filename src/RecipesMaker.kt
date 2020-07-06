@@ -1,8 +1,6 @@
 
 
 fun main(args: Array<String>){
-    var ingredientes = listOf("Agua","Leche","Carne","Verduras","Frutas","Cereal","Huevos","Aceite")
-
     do {
         println("Selecciona la opción deseada")
         println("1. Hacer una receta")
@@ -14,25 +12,18 @@ fun main(args: Array<String>){
         //if (response=="1") return println("Funciono")
         when(leer){
             "1" -> {
-                println("Crea tu recetas")
-                println("1. para regresar al menu principal")
-                println("2. Salir")
+                viewRecipe(leer)
+                makeRecipe()
                 var read: String? = readLine()
             }
             "2" -> {
-                println("Ver las recetas creadas")
-                println("1. para regresar al menu principal")
-                println("2. Salir")
+                viewRecipe(leer)
                 var read: String? = readLine()
             }
             "3" -> {
-                println("Ingredientes Actuales")
-                println("1. para regresar al menu principal")
-                println("2. Salir")
+                viewRecipe(leer)
+                makeRecipe()
 
-                ingredientes.forEach {
-                    println("Ingre.: $it")
-                }
                 var read: String? = readLine()
             }
             "4" -> println("Salir")
@@ -40,4 +31,32 @@ fun main(args: Array<String>){
         }
     }while (leer != "4")
 
+}
+fun makeRecipe(){
+    val ingredientes = arrayOf("Agua","Leche","Carne","Verduras","Frutas","Cereal","Huevos","Aceite")
+    for ((index, ingre) in ingredientes.withIndex()){
+        println("   $index. $ingre")
+    }
+}
+
+fun viewRecipe(menu: String): String{
+    when(menu){
+        in "1" ->{
+            println("Hacer recetas")
+            println("Selecciona por categoría el ingrediente que buscas")
+            /*println("1. para regresar al menu principal")
+            println("2. Salir")*/
+        }
+        in "2" ->{
+            println("Ver las recetas creadas")
+            /*println("1. para regresar al menu principal")
+            println("2. Salir")*/
+        }
+        in "3" ->{
+            println("Ingredientes Actuales")
+            /*println("1. para regresar al menu principal")
+            println("2. Salir")*/
+        }
+    }
+    return "0"
 }
