@@ -2,14 +2,15 @@
 
 fun main(args: Array<String>){
     do {
+        //inicio del menú
         println("Selecciona la opción deseada")
         println("1. Hacer una receta")
         println("2. Ver mis recetas")
         println("3. Ver ingredientes actuales")
         println("4. Salir")
-
+        //variable que recibe la entrad para el menú
         var leer: String? = readLine()
-        //if (response=="1") return println("Funciono")
+        //When para las opciones del menú
         when(leer){
             "1" -> {
                 viewRecipe(leer)
